@@ -36,6 +36,9 @@ document.getElementById("paceToSpeedBtn").addEventListener("click", () => {
   const min = Number(document.getElementById("paceMinutes").value);
   const sec = Number(document.getElementById("paceSeconds").value);
   const result = document.getElementById("paceToSpeedResult");
+  const otherResult = document.getElementById("speedToPaceResult");
+
+  otherResult.textContent = "";
 
   if (!Number.isFinite(min) || !Number.isFinite(sec) || min < 0 || sec < 0 || sec >= 60 || (min === 0 && sec === 0)) {
     result.textContent = "Inserisci un passo valido (es. 5:30).";
@@ -52,6 +55,9 @@ document.getElementById("paceToSpeedBtn").addEventListener("click", () => {
 document.getElementById("speedToPaceBtn").addEventListener("click", () => {
   const speed = Number(document.getElementById("speedInput").value);
   const result = document.getElementById("speedToPaceResult");
+  const otherResult = document.getElementById("paceToSpeedResult");
+
+  otherResult.textContent = "";
 
   if (!Number.isFinite(speed) || speed <= 0) {
     result.textContent = "Inserisci una velocità valida (> 0).";

@@ -22,7 +22,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v5`: cambio titolo da `Runner & Ciclisti Tools` a `Runner e Ciclisti Tools`.
+- `v6`: ogni calcolo runner azzera automaticamente il risultato mostrato nell'altro riquadro.
 
 ## Struttura codice
 
@@ -35,8 +35,8 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 - `formatPace(minutesFloat)`: converte minuti decimali in stringa `m:ss min/km`.
 - `toMinuteSecondParts(minutesFloat)`: converte minuti decimali in `{minutes, seconds}`.
 - Eventi click:
-  - `paceToSpeedBtn`: calcola km/h dal passo.
-  - `speedToPaceBtn`: calcola passo dalla velocita.
+  - `paceToSpeedBtn`: calcola km/h dal passo e azzera il risultato di `speedToPaceBtn`.
+  - `speedToPaceBtn`: calcola passo dalla velocita e azzera il risultato di `paceToSpeedBtn`.
   - `slopeBtn`: calcola pendenza media `%`.
   - `resetAllBtn`: azzera tutti i campi e risultati.
 
