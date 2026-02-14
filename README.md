@@ -10,7 +10,7 @@ Piccola app web locale con due strumenti:
 Nel terminale:
 
 ```bash
-cd /Users/parletti/Codex
+cd "/Users/parletti/chagpt codex progetti/Running_e_Cycling KPI"
 ./run.sh
 ```
 
@@ -20,11 +20,15 @@ Poi apri nel browser:
 
 Per fermare l'app: `Ctrl + C` nel terminale.
 
+## Versione corrente
+
+- `v4`: bottoni verdi + documentazione aggiornata.
+
 ## Struttura codice
 
-- `/Users/parletti/Codex/index.html`: struttura UI (runner, ciclisti, reset).
-- `/Users/parletti/Codex/styles.css`: stile grafico (inclusi bottoni liquid).
-- `/Users/parletti/Codex/app.js`: logica calcoli e gestione eventi pulsanti.
+- `index.html`: struttura UI (runner, ciclisti, reset).
+- `styles.css`: stile grafico (inclusi bottoni liquid verdi).
+- `app.js`: logica calcoli e gestione eventi pulsanti.
 
 ### Note tecniche (JavaScript)
 
@@ -35,3 +39,13 @@ Per fermare l'app: `Ctrl + C` nel terminale.
   - `speedToPaceBtn`: calcola passo dalla velocita.
   - `slopeBtn`: calcola pendenza media `%`.
   - `resetAllBtn`: azzera tutti i campi e risultati.
+
+## Deploy online
+
+L'app e pubblicata con GitHub Pages su:
+
+- https://parletti.github.io/Running_e_Cycling_KPI/
+
+## Versioning
+
+La cronologia versioni e nel file `CHANGELOG.md`.
