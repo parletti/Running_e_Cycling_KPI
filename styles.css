@@ -81,17 +81,67 @@ input {
 
 button {
   margin-top: 12px;
-  border: 0;
-  border-radius: 10px;
-  background: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #0284c7 100%);
   color: #fff;
   padding: 10px 14px;
   font-size: 0.98rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+button::before {
+  width: 170%;
+  height: 230%;
+  left: -40%;
+  top: -175%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0) 63%);
+  animation: liquid-sheen 4s ease-in-out infinite;
+}
+
+button::after {
+  width: 130%;
+  height: 130%;
+  right: -70%;
+  bottom: -95%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 68%);
 }
 
 button:hover {
-  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(2, 132, 199, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  filter: saturate(1.1);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.45);
+  outline-offset: 2px;
+}
+
+@keyframes liquid-sheen {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(10%) translateY(6%) rotate(7deg);
+  }
 }
 
 .result {
