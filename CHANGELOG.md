@@ -1,5 +1,9 @@
 # Changelog
 
+## v5 - 2026-02-14
+
+- Aggiornato titolo pagina e intestazione principale da `Runner & Ciclisti Tools` a `Runner e Ciclisti Tools`.
+
 ## v4 - 2026-02-14
 
 - Aggiornato stile bottoni da blu a verde mantenendo effetto liquid.

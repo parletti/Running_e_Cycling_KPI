@@ -22,7 +22,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v4`: bottoni verdi + documentazione aggiornata.
+- `v5`: cambio titolo da `Runner & Ciclisti Tools` a `Runner e Ciclisti Tools`.
 
 ## Struttura codice
 
