@@ -1,9 +1,10 @@
 # App Runner + Ciclisti
 
-Piccola app web locale con due strumenti:
+Piccola app web locale con tre strumenti:
 
 1. Runner: conversione passo `min/km` <-> velocità `km/h`
-2. Ciclisti: calcolo pendenza media della salita (%)
+2. Runner: calcolo parametro mancante tra passo, distanza e tempo totale
+3. Ciclisti: calcolo pendenza media della salita (%)
 
 ## Avvio
 
@@ -22,7 +23,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v6`: ogni calcolo runner azzera automaticamente il risultato mostrato nell'altro riquadro.
+- `v7`: nuova sezione runner che calcola il terzo parametro tra passo, distanza e tempo totale.
 
 ## Struttura codice
 
@@ -37,6 +38,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 - Eventi click:
   - `paceToSpeedBtn`: calcola km/h dal passo e azzera il risultato di `speedToPaceBtn`.
   - `speedToPaceBtn`: calcola passo dalla velocita e azzera il risultato di `paceToSpeedBtn`.
+  - `tripCalcBtn`: con 2 parametri su 3 calcola il terzo (passo, distanza, tempo totale).
   - `slopeBtn`: calcola pendenza media `%`.
   - `resetAllBtn`: azzera tutti i campi e risultati.
 
