@@ -45,6 +45,31 @@ function toHourMinuteSecondParts(minutesFloat) {
   return { hours, minutes, seconds };
 }
 
+// Popup "About": apertura e chiusura della descrizione iniziale.
+const aboutBtn = document.getElementById("aboutBtn");
+const aboutModal = document.getElementById("aboutModal");
+const closeAboutBtn = document.getElementById("closeAboutBtn");
+
+aboutBtn.addEventListener("click", () => {
+  aboutModal.hidden = false;
+});
+
+closeAboutBtn.addEventListener("click", () => {
+  aboutModal.hidden = true;
+});
+
+aboutModal.addEventListener("click", (event) => {
+  if (event.target === aboutModal) {
+    aboutModal.hidden = true;
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !aboutModal.hidden) {
+    aboutModal.hidden = true;
+  }
+});
+
 // Runner: da passo (min:sec) a velocita (km/h), con auto-compilazione del campo opposto.
 document.getElementById("paceToSpeedBtn").addEventListener("click", () => {
   const min = Number(document.getElementById("paceMinutes").value);

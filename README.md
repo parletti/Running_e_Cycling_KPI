@@ -23,7 +23,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v8`: sezioni runner invertite (prima calcolo 3 parametri, poi passo ↔ velocità).
+- `v9`: aggiunta sezione About in popup con icona Info accanto al titolo.
 
 ## Struttura codice
 
@@ -36,6 +36,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 - `formatPace(minutesFloat)`: converte minuti decimali in stringa `m:ss min/km`.
 - `toMinuteSecondParts(minutesFloat)`: converte minuti decimali in `{minutes, seconds}`.
 - Eventi click:
+  - `aboutBtn`: apre il popup About con descrizione e casi d'uso.
   - `paceToSpeedBtn`: calcola km/h dal passo e azzera il risultato di `speedToPaceBtn`.
   - `speedToPaceBtn`: calcola passo dalla velocita e azzera il risultato di `paceToSpeedBtn`.
   - `tripCalcBtn`: con 2 parametri su 3 calcola il terzo (passo, distanza, tempo totale).

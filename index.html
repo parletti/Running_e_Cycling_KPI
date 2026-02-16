@@ -4,11 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Runner e Ciclisti Tools</title>
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <main class="container">
-    <h1>Runner e Ciclisti Tools</h1>
+    <div class="title-row">
+      <h1>Runner e Ciclisti Tools</h1>
+      <button id="aboutBtn" class="info-btn" type="button" aria-haspopup="dialog" aria-controls="aboutModal">i</button>
+    </div>
     <p class="subtitle">Calcoli rapidi per corsa e bici.</p>
 
     <section class="card">
@@ -86,6 +89,28 @@
     </div>
   </main>
 
-  <script src="app.js?v=7"></script>
+  <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="aboutTitle">Perche questa app</h2>
+        <button id="closeAboutBtn" class="modal-close" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <p>
+        In tanti anni di corsa e bici, pensando alle domande che mi faccio sui parametri prestazionali
+        e ai calcoli che a volte devo fare in maniera piu o meno complicata, mi sono venute in mente
+        tre situazioni pratiche che ho riportato qui per facilitarmi (e spero facilitare anche ad altri) le cose.
+      </p>
+      <p>Esempi:</p>
+      <ul>
+        <li>Voglio fare una mezza maratona in 1h:30m: che passo devo tenere?</li>
+        <li>Guardo i risultati ufficiali di una gara: conosco tempo e distanza e voglio ricavare il passo.</li>
+        <li>Se tengo un certo passo, quanto impiego a percorrere una 10 km?</li>
+        <li>In bici: conosco altitudine di partenza/arrivo e distanza, qual e la pendenza media?</li>
+        <li>Per chi non corre, spesso è più intuitivo capire i km/h rispetto al passo min/km.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="app.js?v=9"></script>
 </body>
 </html>

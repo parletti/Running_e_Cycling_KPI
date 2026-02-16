@@ -1,5 +1,12 @@
 # Changelog
 
+## v9 - 2026-02-14
+
+- Aggiunto popup `About` apribile con icona `Info`.
+- Inserita nota introduttiva con esempi pratici d'uso di corsa e bici.
+- Corretto testo: `spesso è più intuitivo...`.
+- Posizionato il bottone `Info` subito dopo il titolo.
+
 ## v8 - 2026-02-14
 
 - Invertito l'ordine delle due sezioni runner nell'interfaccia.
