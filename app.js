@@ -216,19 +216,21 @@ document.getElementById("slopeBtn").addEventListener("click", () => {
 });
 
 // Reset globale: svuota tutti gli input e tutte le aree risultato.
-document.getElementById("resetAllBtn").addEventListener("click", () => {
-  const inputIds = [
-    "paceMinutes", "paceSeconds", "speedInput",
-    "tripPaceMinutes", "tripPaceSeconds", "tripDistanceKm", "tripHours", "tripMinutes", "tripSeconds",
-    "altStart", "altEnd", "distanceKm"
-  ];
-  const resultIds = ["paceToSpeedResult", "speedToPaceResult", "tripResult", "slopeResult"];
+document.querySelectorAll("[data-reset-all]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const inputIds = [
+      "paceMinutes", "paceSeconds", "speedInput",
+      "tripPaceMinutes", "tripPaceSeconds", "tripDistanceKm", "tripHours", "tripMinutes", "tripSeconds",
+      "altStart", "altEnd", "distanceKm"
+    ];
+    const resultIds = ["paceToSpeedResult", "speedToPaceResult", "tripResult", "slopeResult"];
 
-  inputIds.forEach((id) => {
-    document.getElementById(id).value = "";
-  });
+    inputIds.forEach((id) => {
+      document.getElementById(id).value = "";
+    });
 
-  resultIds.forEach((id) => {
-    document.getElementById(id).textContent = "";
+    resultIds.forEach((id) => {
+      document.getElementById(id).textContent = "";
+    });
   });
 });

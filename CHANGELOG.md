@@ -1,5 +1,11 @@
 # Changelog
 
+## v10 - 2026-02-14
+
+- Aggiunto un secondo bottone `Azzera tutti i campi` in alto (prima della prima sezione).
+- Mantenuto il bottone reset anche in basso.
+- Uniformata la logica reset per entrambi i bottoni.
+
 ## v9 - 2026-02-14
 
 - Aggiunto popup `About` apribile con icona `Info`.

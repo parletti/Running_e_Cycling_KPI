@@ -244,6 +244,11 @@ button:focus-visible {
   justify-content: center;
 }
 
+.actions-top {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
 #resetAllBtn {
   min-width: 220px;
 }

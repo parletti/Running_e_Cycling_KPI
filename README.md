@@ -23,7 +23,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v9`: aggiunta sezione About in popup con icona Info accanto al titolo.
+- `v10`: aggiunto doppio bottone "Azzera tutti i campi" (inizio e fine pagina).
 
 ## Struttura codice
 
@@ -41,7 +41,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
   - `speedToPaceBtn`: calcola passo dalla velocita e azzera il risultato di `paceToSpeedBtn`.
   - `tripCalcBtn`: con 2 parametri su 3 calcola il terzo (passo, distanza, tempo totale).
   - `slopeBtn`: calcola pendenza media `%`.
-  - `resetAllBtn`: azzera tutti i campi e risultati.
+  - `resetAllBtn` e `reset-all-btn`: azzerano tutti i campi e risultati da inizio o fine pagina.
 
 ## Deploy online
 
