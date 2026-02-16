@@ -1,5 +1,10 @@
 # Changelog
 
+## v8 - 2026-02-14
+
+- Invertito l'ordine delle due sezioni runner nell'interfaccia.
+- Ora compare prima `Runner: passo, distanza, tempo totale` e poi `Runner: passo ↔ velocità`.
+
 ## v7 - 2026-02-14
 
 - Aggiunta sezione runner con 3 parametri: passo al km, distanza, tempo totale.

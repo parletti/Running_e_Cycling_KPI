@@ -12,33 +12,6 @@
     <p class="subtitle">Calcoli rapidi per corsa e bici.</p>
 
     <section class="card">
-      <h2>Runner: passo ↔ velocità</h2>
-      <p class="note">Compila uno dei due parametri e premi il bottone relativo per calcolare l'altro.</p>
-
-      <div class="grid two-cols">
-        <div>
-          <h3>Da passo a velocità</h3>
-          <label for="paceMinutes">Passo al km (minuti:secondi)</label>
-          <div class="pace-inputs">
-            <input id="paceMinutes" type="number" min="0" placeholder="min" />
-            <span>:</span>
-            <input id="paceSeconds" type="number" min="0" max="59" placeholder="sec" />
-          </div>
-          <button id="paceToSpeedBtn">Calcola km/h</button>
-          <p id="paceToSpeedResult" class="result"></p>
-        </div>
-
-        <div>
-          <h3>Da velocità a passo</h3>
-          <label for="speedInput">Velocità (km/h)</label>
-          <input id="speedInput" type="number" min="0" step="0.01" placeholder="es. 12.5" />
-          <button id="speedToPaceBtn">Calcola passo</button>
-          <p id="speedToPaceResult" class="result"></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
       <h2>Runner: passo, distanza, tempo totale</h2>
       <p class="note">Compila 2 parametri su 3 e premi il bottone per calcolare il terzo.</p>
 
@@ -63,6 +36,33 @@
 
       <button id="tripCalcBtn">Calcola parametro mancante</button>
       <p id="tripResult" class="result"></p>
+    </section>
+
+    <section class="card">
+      <h2>Runner: passo ↔ velocità</h2>
+      <p class="note">Compila uno dei due parametri e premi il bottone relativo per calcolare l'altro.</p>
+
+      <div class="grid two-cols">
+        <div>
+          <h3>Da passo a velocità</h3>
+          <label for="paceMinutes">Passo al km (minuti:secondi)</label>
+          <div class="pace-inputs">
+            <input id="paceMinutes" type="number" min="0" placeholder="min" />
+            <span>:</span>
+            <input id="paceSeconds" type="number" min="0" max="59" placeholder="sec" />
+          </div>
+          <button id="paceToSpeedBtn">Calcola km/h</button>
+          <p id="paceToSpeedResult" class="result"></p>
+        </div>
+
+        <div>
+          <h3>Da velocità a passo</h3>
+          <label for="speedInput">Velocità (km/h)</label>
+          <input id="speedInput" type="number" min="0" step="0.01" placeholder="es. 12.5" />
+          <button id="speedToPaceBtn">Calcola passo</button>
+          <p id="speedToPaceResult" class="result"></p>
+        </div>
+      </div>
     </section>
 
     <section class="card">

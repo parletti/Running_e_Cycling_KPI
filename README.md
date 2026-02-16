@@ -23,7 +23,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v7`: nuova sezione runner che calcola il terzo parametro tra passo, distanza e tempo totale.
+- `v8`: sezioni runner invertite (prima calcolo 3 parametri, poi passo ↔ velocità).
 
 ## Struttura codice
 
