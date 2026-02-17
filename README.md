@@ -23,7 +23,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 
 ## Versione corrente
 
-- `v10`: aggiunto doppio bottone "Azzera tutti i campi" (inizio e fine pagina).
+- `v11`: interfaccia a tab con sezioni sovrapposte e prima linguetta "Passo, Distanza, Tempo".
 
 ## Struttura codice
 
@@ -37,6 +37,7 @@ Per fermare l'app: `Ctrl + C` nel terminale.
 - `toMinuteSecondParts(minutesFloat)`: converte minuti decimali in `{minutes, seconds}`.
 - Eventi click:
   - `aboutBtn`: apre il popup About con descrizione e casi d'uso.
+  - `tab-btn`: cambia sezione attiva tra le 3 linguette.
   - `paceToSpeedBtn`: calcola km/h dal passo e azzera il risultato di `speedToPaceBtn`.
   - `speedToPaceBtn`: calcola passo dalla velocita e azzera il risultato di `paceToSpeedBtn`.
   - `tripCalcBtn`: con 2 parametri su 3 calcola il terzo (passo, distanza, tempo totale).

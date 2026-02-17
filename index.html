@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Runner e Ciclisti Tools</title>
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=11" />
 </head>
 <body>
   <main class="container">
@@ -17,75 +17,83 @@
       <button class="reset-all-btn" data-reset-all type="button">Azzera tutti i campi</button>
     </div>
 
-    <section class="card">
-      <h2>Runner: passo, distanza, tempo totale</h2>
-      <p class="note">Compila 2 parametri su 3 e premi il bottone per calcolare il terzo.</p>
-
-      <label for="tripPaceMinutes">Passo al km (minuti:secondi)</label>
-      <div class="pace-inputs">
-        <input id="tripPaceMinutes" type="number" min="0" placeholder="min" />
-        <span>:</span>
-        <input id="tripPaceSeconds" type="number" min="0" max="59" placeholder="sec" />
+    <div class="tabs-shell">
+      <div class="tabs-row" role="tablist" aria-label="Sezioni calcolo">
+        <button class="tab-btn active" data-tab-target="trip-tab" role="tab" aria-selected="true" type="button">Passo, Distanza, Tempo</button>
+        <button class="tab-btn" data-tab-target="pace-tab" role="tab" aria-selected="false" type="button">Passo ↔ Velocità</button>
+        <button class="tab-btn" data-tab-target="slope-tab" role="tab" aria-selected="false" type="button">Pendenza Salita</button>
       </div>
 
-      <label for="tripDistanceKm">Distanza (km)</label>
-      <input id="tripDistanceKm" type="number" min="0" step="0.01" placeholder="es. 10" />
+      <section id="trip-tab" class="card tab-panel">
+        <h2>Runner: passo, distanza, tempo totale</h2>
+        <p class="note">Compila 2 parametri su 3 e premi il bottone per calcolare il terzo.</p>
 
-      <label for="tripHours">Tempo totale (ore:minuti:secondi)</label>
-      <div class="time-inputs">
-        <input id="tripHours" type="number" min="0" placeholder="ore" />
-        <span>:</span>
-        <input id="tripMinutes" type="number" min="0" max="59" placeholder="min" />
-        <span>:</span>
-        <input id="tripSeconds" type="number" min="0" max="59" placeholder="sec" />
-      </div>
+        <label for="tripPaceMinutes">Passo al km (minuti:secondi)</label>
+        <div class="pace-inputs">
+          <input id="tripPaceMinutes" type="number" min="0" placeholder="min" />
+          <span>:</span>
+          <input id="tripPaceSeconds" type="number" min="0" max="59" placeholder="sec" />
+        </div>
 
-      <button id="tripCalcBtn">Calcola parametro mancante</button>
-      <p id="tripResult" class="result"></p>
-    </section>
+        <label for="tripDistanceKm">Distanza (km)</label>
+        <input id="tripDistanceKm" type="number" min="0" step="0.01" placeholder="es. 10" />
 
-    <section class="card">
-      <h2>Runner: passo ↔ velocità</h2>
-      <p class="note">Compila uno dei due parametri e premi il bottone relativo per calcolare l'altro.</p>
+        <label for="tripHours">Tempo totale (ore:minuti:secondi)</label>
+        <div class="time-inputs">
+          <input id="tripHours" type="number" min="0" placeholder="ore" />
+          <span>:</span>
+          <input id="tripMinutes" type="number" min="0" max="59" placeholder="min" />
+          <span>:</span>
+          <input id="tripSeconds" type="number" min="0" max="59" placeholder="sec" />
+        </div>
 
-      <div class="grid two-cols">
-        <div>
-          <h3>Da passo a velocità</h3>
-          <label for="paceMinutes">Passo al km (minuti:secondi)</label>
-          <div class="pace-inputs">
-            <input id="paceMinutes" type="number" min="0" placeholder="min" />
-            <span>:</span>
-            <input id="paceSeconds" type="number" min="0" max="59" placeholder="sec" />
+        <button id="tripCalcBtn">Calcola parametro mancante</button>
+        <p id="tripResult" class="result"></p>
+      </section>
+
+      <section id="pace-tab" class="card tab-panel" hidden>
+        <h2>Runner: passo ↔ velocità</h2>
+        <p class="note">Compila uno dei due parametri e premi il bottone relativo per calcolare l'altro.</p>
+
+        <div class="grid two-cols">
+          <div>
+            <h3>Da passo a velocità</h3>
+            <label for="paceMinutes">Passo al km (minuti:secondi)</label>
+            <div class="pace-inputs">
+              <input id="paceMinutes" type="number" min="0" placeholder="min" />
+              <span>:</span>
+              <input id="paceSeconds" type="number" min="0" max="59" placeholder="sec" />
+            </div>
+            <button id="paceToSpeedBtn">Calcola km/h</button>
+            <p id="paceToSpeedResult" class="result"></p>
           </div>
-          <button id="paceToSpeedBtn">Calcola km/h</button>
-          <p id="paceToSpeedResult" class="result"></p>
+
+          <div>
+            <h3>Da velocità a passo</h3>
+            <label for="speedInput">Velocità (km/h)</label>
+            <input id="speedInput" type="number" min="0" step="0.01" placeholder="es. 12.5" />
+            <button id="speedToPaceBtn">Calcola passo</button>
+            <p id="speedToPaceResult" class="result"></p>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <h3>Da velocità a passo</h3>
-          <label for="speedInput">Velocità (km/h)</label>
-          <input id="speedInput" type="number" min="0" step="0.01" placeholder="es. 12.5" />
-          <button id="speedToPaceBtn">Calcola passo</button>
-          <p id="speedToPaceResult" class="result"></p>
-        </div>
-      </div>
-    </section>
+      <section id="slope-tab" class="card tab-panel" hidden>
+        <h2>Ciclisti: pendenza media salita</h2>
+        <label for="altStart">Altitudine partenza (m)</label>
+        <input id="altStart" type="number" step="0.1" placeholder="es. 450" />
 
-    <section class="card">
-      <h2>Ciclisti: pendenza media salita</h2>
-      <label for="altStart">Altitudine partenza (m)</label>
-      <input id="altStart" type="number" step="0.1" placeholder="es. 450" />
+        <label for="altEnd">Altitudine arrivo (m)</label>
+        <input id="altEnd" type="number" step="0.1" placeholder="es. 910" />
 
-      <label for="altEnd">Altitudine arrivo (m)</label>
-      <input id="altEnd" type="number" step="0.1" placeholder="es. 910" />
+        <label for="distanceKm">Lunghezza salita (km)</label>
+        <input id="distanceKm" type="number" min="0" step="0.01" placeholder="es. 8.2" />
 
-      <label for="distanceKm">Lunghezza salita (km)</label>
-      <input id="distanceKm" type="number" min="0" step="0.01" placeholder="es. 8.2" />
-
-      <button id="slopeBtn">Calcola pendenza media</button>
-      <p id="slopeResult" class="result"></p>
-      <p class="note">Formula: pendenza (%) = (dislivello / distanza orizzontale) × 100</p>
-    </section>
+        <button id="slopeBtn">Calcola pendenza media</button>
+        <p id="slopeResult" class="result"></p>
+        <p class="note">Formula: pendenza (%) = (dislivello / distanza orizzontale) × 100</p>
+      </section>
+    </div>
 
     <div class="actions">
       <button id="resetAllBtn" class="reset-all-btn" data-reset-all type="button">Azzera tutti i campi</button>
@@ -114,6 +122,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

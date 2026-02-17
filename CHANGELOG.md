@@ -1,5 +1,11 @@
 # Changelog
 
+## v11 - 2026-02-14
+
+- Nuova UI a linguette (tab) con sezioni sovrapposte.
+- Prima linguetta rinominata in `Passo, Distanza, Tempo`.
+- Mantenuti popup About, doppi bottoni reset e logiche di calcolo esistenti.
+
 ## v10 - 2026-02-14
 
 - Aggiunto un secondo bottone `Azzera tutti i campi` in alto (prima della prima sezione).

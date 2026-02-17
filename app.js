@@ -70,6 +70,28 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Linguette sezioni: mostra un pannello alla volta.
+const tabButtons = Array.from(document.querySelectorAll("[data-tab-target]"));
+const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.tabTarget;
+
+    tabButtons.forEach((tabButton) => {
+      tabButton.classList.remove("active");
+      tabButton.setAttribute("aria-selected", "false");
+    });
+
+    tabPanels.forEach((panel) => {
+      panel.hidden = panel.id !== targetId;
+    });
+
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+  });
+});
+
 // Runner: da passo (min:sec) a velocita (km/h), con auto-compilazione del campo opposto.
 document.getElementById("paceToSpeedBtn").addEventListener("click", () => {
   const min = Number(document.getElementById("paceMinutes").value);
